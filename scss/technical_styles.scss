@@ -1,0 +1,39 @@
+// Адаптивні зображення
+.img{
+    // Адаптивна висота задаємо max-width для container
+    &-container{
+        overflow: hidden;
+        
+        padding: 0 0 58% 0;
+
+        position: relative;
+    }
+    &-style{
+        width: 100%;
+        height: 100%;
+       
+        object-fit: cover;
+        object-position: center;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    // Адаптивна ширина
+    &-container-aw{
+        flex: 0 0 33.3%;
+
+        position: relative;
+    }
+    &-style-aw{
+       width: 100%;
+       height: 100%;
+
+       object-fit: cover;
+       
+       position: absolute;
+       top: 0;
+       left: 0;
+    }
+}
+

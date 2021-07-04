@@ -1,0 +1,33 @@
+// Змінні які потрібно задати
+// 1. Максимальная ширина контейнера
+$containerWidth: 1440;
+
+
+@mixin containerWidth {
+    max-width: #{$containerWidth + px};
+}
+
+// Адаптивний шрифт
+/* Сніпет
+{
+	"adaptive fonts": {
+		"scope": "scss",
+		"prefix": "adf",
+		"body": [
+			"@include adaptive-fonts ($1, $2);"
+		]
+	}
+}
+*/
+@mixin adaptive-fonts ($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $pcSize + $mobSize * 0.7;
+    @media (max-width: 776px) {
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100VW - 320px) / #{$containerWidth}));
+    }
+    @media (min-width: 776px) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100VW / #{$containerWidth}));
+    }
+}
+
+
